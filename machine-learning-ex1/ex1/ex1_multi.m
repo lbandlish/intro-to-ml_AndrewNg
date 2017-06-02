@@ -82,7 +82,9 @@ X = [ones(m, 1) X];
 fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
-alpha = 0.01;
+alphaarr = [0.01 0.001 10];
+for alpha = alphaarr,
+
 num_iters = 400;
 
 % Init Theta and Run Gradient Descent 
@@ -92,9 +94,10 @@ theta = zeros(3, 1);
 % Plot the convergence graph
 figure;
 plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+hold on;
 xlabel('Number of iterations');
 ylabel('Cost J');
-
+end;
 % Display gradient descent's result
 fprintf('Theta computed from gradient descent: \n');
 fprintf(' %f \n', theta);
@@ -104,7 +107,10 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 % Recall that the first column of X is all-ones. Thus, it does
 % not need to be normalized.
-price = 0; % You should change this
+X1 = [1650 3];
+X1 = (X1-mu)./sigma;
+X1 = [1,X1];
+price = X1*theta; % You should change this
 
 
 % ============================================================
@@ -151,6 +157,9 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
 
+X1=[1,1650,3];
+
+price = X1*theta;
 
 % ============================================================
 

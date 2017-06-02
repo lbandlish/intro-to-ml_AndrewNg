@@ -1,0 +1,63 @@
+[1mdiff --git a/machine-learning-ex1/ex1/.ex1_multi.m.swp b/machine-learning-ex1/ex1/.ex1_multi.m.swp[m
+[1mdeleted file mode 100644[m
+[1mindex 95748c4..0000000[m
+Binary files a/machine-learning-ex1/ex1/.ex1_multi.m.swp and /dev/null differ
+[1mdiff --git a/machine-learning-ex1/ex1/computeCostMulti.m b/machine-learning-ex1/ex1/computeCostMulti.m[m
+[1mindex d9a3d68..c8fb25b 100644[m
+[1m--- a/machine-learning-ex1/ex1/computeCostMulti.m[m
+[1m+++ b/machine-learning-ex1/ex1/computeCostMulti.m[m
+[36m@@ -13,7 +13,7 @@[m [mJ = 0;[m
+ % Instructions: Compute the cost of a particular choice of theta[m
+ %               You should set J to the cost.[m
+ [m
+[31m-[m
+[32m+[m[32mJ=(1/(2*m))*sum((X*theta-y).^2);[m
+ [m
+ [m
+ [m
+[1mdiff --git a/machine-learning-ex1/ex1/featureNormalize.m b/machine-learning-ex1/ex1/featureNormalize.m[m
+[1mindex bb5d072..97d927b 100644[m
+[1m--- a/machine-learning-ex1/ex1/featureNormalize.m[m
+[1m+++ b/machine-learning-ex1/ex1/featureNormalize.m[m
+[36m@@ -26,8 +26,10 @@[m [msigma = zeros(1, size(X, 2));[m
+ % Hint: You might find the 'mean' and 'std' functions useful.[m
+ %       [m
+ [m
+[32m+[m[32mmu = mean(X);[m
+[32m+[m[32msigma = std(X);[m
+ [m
+[31m-[m
+[32m+[m[32mX_norm = (X_norm - mu)./sigma;[m
+ [m
+ [m
+ [m
+[1mdiff --git a/machine-learning-ex1/ex1/gradientDescentMulti.m b/machine-learning-ex1/ex1/gradientDescentMulti.m[m
+[1mindex e5e1b7e..b5ad013 100644[m
+[1m--- a/machine-learning-ex1/ex1/gradientDescentMulti.m[m
+[1m+++ b/machine-learning-ex1/ex1/gradientDescentMulti.m[m
+[36m@@ -18,11 +18,7 @@[m [mfor iter = 1:num_iters[m
+     %[m
+ [m
+ [m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[32m+[m[32mtheta = theta - alpha*(1/m)*(X'*(X*theta - y));[m
+ [m
+ [m
+ [m
+[1mdiff --git a/machine-learning-ex1/ex1/octave-workspace b/machine-learning-ex1/ex1/octave-workspace[m
+[1mindex 2ead8f4..3cfcc6c 100644[m
+Binary files a/machine-learning-ex1/ex1/octave-workspace and b/machine-learning-ex1/ex1/octave-workspace differ
+[1mdiff --git a/machine-learning-ex1/ex1/token.mat b/machine-learning-ex1/ex1/token.mat[m
+[1mindex e4e6ba1..ce6bea7 100644[m
+[1m--- a/machine-learning-ex1/ex1/token.mat[m
+[1m+++ b/machine-learning-ex1/ex1/token.mat[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-# Created by Octave 4.0.2, Fri Jun 02 14:39:13 2017 IST <lakshay@LakshayB>[m
+[32m+[m[32m# Created by Octave 4.0.2, Fri Jun 02 19:00:07 2017 IST <lakshay@LakshayB>[m
+ # name: email[m
+ # type: sq_string[m
+ # elements: 1[m
