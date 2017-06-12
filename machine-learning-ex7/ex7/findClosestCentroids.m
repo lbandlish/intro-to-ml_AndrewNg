@@ -21,7 +21,18 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+normval = zeros(K,1);
 
+for i = 1:size(X,1),
+
+	for j = 1:K,
+		normval(j) = norm(X(i,:) - centroids(j,:));
+	end
+
+[garbage,idx(i)] = min(normval);
+
+end
+		
 
 
 
