@@ -14,7 +14,13 @@ centroids = zeros(K, size(X, 2));
 %
 
 
+% generate a random index containing row vector
 
+randidx = randperm(size(X,1));
+
+% assign centroids with random example values
+
+centroids = X(randidx(1:K),:);
 
 
 
